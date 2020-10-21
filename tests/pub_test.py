@@ -24,3 +24,10 @@ class TestPub(unittest.TestCase):
         food = Food("Mac and cheese", 5.50, 2)
         self.pub.add_food_to_list(food)
         self.assertEqual(1, self.pub.food_list_count())
+
+    def test_stock_count_works(self):
+        drink = Drink("Vodka Martini", 6.50, 3)
+        self.pub.add_drink_to_list(drink)
+        self.pub.add_drink_to_list(drink)
+        self.pub.add_drink_to_list(drink)
+        self.assertEqual(3, self.pub.drinks[drink])
