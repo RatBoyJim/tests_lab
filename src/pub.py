@@ -21,5 +21,8 @@ class Pub:
     def food_list_count(self):
         return len(self.food_list)
 
-    def create_stock(self):
-        pass
+    def stock_value(self):
+        total_value = 0
+        for item in self.drinks:
+            total_value += item.price * self.drinks[item]
+        return total_value

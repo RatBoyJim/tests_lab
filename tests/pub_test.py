@@ -31,3 +31,9 @@ class TestPub(unittest.TestCase):
         self.pub.add_drink_to_list(drink)
         self.pub.add_drink_to_list(drink)
         self.assertEqual(3, self.pub.drinks[drink])
+
+    def test_stock_value(self):
+        drink = Drink("Vodka Martini", 6.50, 3)
+        self.pub.add_drink_to_list(drink)
+        self.pub.add_drink_to_list(drink)
+        self.assertEqual(13.00, self.pub.stock_value())
