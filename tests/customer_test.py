@@ -71,6 +71,16 @@ class TestCustomer(unittest.TestCase):
         self.customer.buy_drink(drink, pub)
         self.customer.buy_food(food, pub)
         self.assertEqual(3, self.customer.drunkenness)
+
+    def test_customer_drunkenness_doesnt_go_below_zero(self):
+        pub = Pub("The Prancing Pony", 100.00)
+        drink = Drink("Vodka Martini", 6.50, 3)
+        food = Food("Sunday Roast", 8.20, 8)
+        pub.add_drink_to_list(drink)
+        pub.add_food_to_list(food)
+        self.customer.buy_drink(drink, pub)
+        self.customer.buy_food(food, pub)
+        self.assertEqual(0, self.customer.drunkenness)
         
 
     

@@ -28,5 +28,7 @@ class Customer:
                 pub.till += item.price
                 if (self.drunkenness - item.rejuvenation_level) > 0:
                     self.drunkenness -= item.rejuvenation_level
+                else:
+                    self.drunkenness = 0
 
 
