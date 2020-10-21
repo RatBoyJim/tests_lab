@@ -1,6 +1,7 @@
 import unittest
 from src.pub import Pub
 from src.drink import Drink
+from src.food import Food
 
 class TestPub(unittest.TestCase):
     
@@ -18,3 +19,8 @@ class TestPub(unittest.TestCase):
         drink = Drink("Vodka Martini", 6.50, 3)
         self.pub.add_drink_to_list(drink)
         self.assertEqual(1, self.pub.drinks_list_count())
+
+    def test_add_food_to_list(self):
+        food = Food("Mac and cheese", 5.50, 2)
+        self.pub.add_food_to_list(food)
+        self.assertEqual(1, self.pub.food_list_count())
